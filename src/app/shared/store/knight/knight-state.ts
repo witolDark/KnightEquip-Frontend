@@ -1,4 +1,4 @@
-import {Action, Select, Selector, State, StateContext} from '@ngxs/store';
+import {Action, Selector, State, StateContext} from '@ngxs/store';
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Links} from "../../enums/links";
@@ -32,10 +32,11 @@ export class KnightState {
     return state;
   }
 
-  constructor(private httpClents: HttpClient) {}
+  constructor(private httpClents: HttpClient) {
+  }
 
   @Action(GetKnight)
-  getKnight({patchState}: StateContext<KnightStateModel>){
+  getKnight({patchState}: StateContext<KnightStateModel>) {
     return this.httpClents.get<KnightStateModel>(Links.Knight).pipe(tap((payload: KnightStateModel) => {
       patchState({
         ...payload

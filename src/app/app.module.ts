@@ -14,12 +14,15 @@ import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
 import {environment} from "../environments/environment";
 import {HttpClientModule} from "@angular/common/http";
 import {ButtonModule} from "primeng/button";
+import { InventoryComponent } from './inventory/inventory.component';
+import {InventoryState} from "./shared/store/inventory/inventory-state";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AttributesComponent
+    AttributesComponent,
+    InventoryComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import {ButtonModule} from "primeng/button";
     TableModule,
     HttpClientModule,
     NgOptimizedImage,
-    NgxsModule.forRoot([KnightState]),
+    NgxsModule.forRoot([KnightState, InventoryState]),
     NgxsLoggerPluginModule.forRoot({disabled: environment.production}),
     NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production}),
     ButtonModule

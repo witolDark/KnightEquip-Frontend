@@ -3,6 +3,7 @@ import {attributes} from "../shared/models/attributes";
 import {Subject, takeUntil} from "rxjs";
 import {KnightService} from "../shared/services/knight.service";
 import {KnightStateModel} from "../shared/models/knight-payload";
+import {InventoryService} from "../shared/services/inventory.service";
 
 @Component({
   selector: 'app-attributes',
@@ -13,8 +14,7 @@ export class AttributesComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   protected knight?: KnightStateModel;
 
-  constructor(private knightService: KnightService) {
-  }
+  constructor(private knightService: KnightService, private inventoryService: InventoryService) {}
 
   ngOnInit() {
     this.knightService.knight$?.pipe(takeUntil(this.destroy$)).subscribe((knight: KnightStateModel) => {
@@ -28,6 +28,10 @@ export class AttributesComponent implements OnInit, OnDestroy {
   }
 
   protected readonly attributes = attributes;
+
+  onGenerateItem() {
+    this.inventoryService.generateItem();
+  }
 
 
 }

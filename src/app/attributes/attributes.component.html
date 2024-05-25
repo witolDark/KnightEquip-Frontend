@@ -1,4 +1,4 @@
-<div class="page" fxLayout="column">
+<div class="page" fxLayout="column" fxLayoutGap="20px">
   <div fxLayout="column" fxLayoutGap="10px">
     <span>Базові характеристики</span>
     <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
@@ -50,6 +50,75 @@
       </div>
       <span class="value">{{ this.knight?.energyRecharge }} %</span>
     </div>
+  </div>
+  <div fxLayout="column" fxLayoutGap="10px">
+    <span>Екіпірування</span>
+    <div class="card-row" fxLayout="row" fxLayoutGap="20px">
+      <div class="card">
+        <div class="rariry-background">
+
+        </div>
+        <div class="stars" fxLayout="row" fxLayoutAlign="center center">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="level-background">
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="rariry-background">
+
+        </div>
+        <div class="stars">
+
+        </div>
+        <div class="level-background">
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="rariry-background">
+
+        </div>
+        <div class="stars">
+
+        </div>
+        <div class="level-background">
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="rariry-background">
+
+        </div>
+        <div class="stars">
+
+        </div>
+        <div class="level-background">
+
+        </div>
+      </div>
+      <div class="card">
+        <div class="rariry-background">
+
+        </div>
+        <div class="stars">
+
+        </div>
+        <div class="level-background">
+
+        </div>
+      </div>
+    </div>
+    <button
+      pButton
+      label="Згенерувати предмет"
+      class="generate-button" (click)="onGenerateItem()">
+    </button>
   </div>
 </div>
 
