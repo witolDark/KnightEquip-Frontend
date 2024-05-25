@@ -1,0 +1,109 @@
+<div class="page" fxLayout="column">
+  <div fxLayout="column" fxLayoutGap="10px">
+    <span>Базові характеристики</span>
+    <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <img [src]="attributes[0].url" alt="icon" class="attribute-icon">
+        <span class="at-name">{{ attributes[0].name }}</span>
+      </div>
+      <span class="value">{{ this.knight?.baseHp }}</span>
+    </div>
+    <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <img [src]="attributes[1].url" alt="icon" class="attribute-icon">
+        <span class="at-name">{{ attributes[1].name }}</span>
+      </div>
+      <span class="value">{{ this.knight?.baseDamage }}</span>
+    </div>
+    <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <img [src]="attributes[2].url" alt="icon" class="attribute-icon">
+        <span class="at-name">{{ attributes[2].name }}</span>
+      </div>
+      <span class="value">{{ this.knight?.baseArmour }}</span>
+    </div>
+    <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <img [src]="attributes[3].url" alt="icon" class="attribute-icon">
+        <span class="at-name">{{ attributes[3].name }}</span>
+      </div>
+      <span class="value">{{ this.knight?.elementalMastery }}</span>
+    </div>
+    <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <img [src]="attributes[4].url" alt="icon" class="attribute-icon">
+        <span class="at-name">{{ attributes[4].name }}</span>
+      </div>
+      <span class="value">{{ this.knight?.critRate }} %</span>
+    </div>
+    <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <img [src]="attributes[5].url" alt="icon" class="attribute-icon">
+        <span class="at-name">{{ attributes[5].name }}</span>
+      </div>
+      <span class="value">{{ this.knight?.critDamage }} %</span>
+    </div>
+    <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
+      <div>
+        <img [src]="attributes[6].url" alt="icon" class="attribute-icon">
+        <span class="at-name">{{ attributes[6].name }}</span>
+      </div>
+      <span class="value">{{ this.knight?.energyRecharge }} %</span>
+    </div>
+  </div>
+</div>
+
+
+<!--    <p-table [tableStyle]="{ 'min-width': '50rem' }">-->
+<!--      <ng-template pTemplate="body">-->
+<!--        <tr class="table-row">-->
+<!--          <td class="attribute">-->
+<!--            <img [src]="attributes[0].url" alt="icon" class="attribute-icon">-->
+<!--            <span>{{attributes[0].name}}</span>-->
+<!--          </td>-->
+<!--          <td class="value">{{this.knight?.baseHp}}</td>-->
+<!--        </tr>-->
+<!--        <tr class="table-row">-->
+<!--          <td class="attribute">-->
+<!--            <img [src]="attributes[1].url" alt="icon" class="attribute-icon">-->
+<!--            <span>{{attributes[1].name}}</span>-->
+<!--          </td>-->
+<!--          <td class="value">{{this.knight?.baseDamage}}</td>-->
+<!--        </tr>-->
+<!--        <tr class="table-row">-->
+<!--          <td class="attribute">-->
+<!--            <img [src]="attributes[2].url" alt="icon" class="attribute-icon">-->
+<!--            <span>{{attributes[2].name}}</span>-->
+<!--          </td>-->
+<!--          <td class="value">{{this.knight?.baseArmour}}</td>-->
+<!--        </tr>-->
+<!--        <tr class="table-row">-->
+<!--          <td class="attribute">-->
+<!--            <img [src]="attributes[3].url" alt="icon" class="attribute-icon">-->
+<!--            <span>{{attributes[3].name}}</span>-->
+<!--          </td>-->
+<!--          <td class="value">{{this.knight?.elementalMastery}}</td>-->
+<!--        </tr>-->
+<!--        <tr class="table-row">-->
+<!--          <td class="attribute">-->
+<!--            <img [src]="attributes[4].url" alt="icon" class="attribute-icon">-->
+<!--            <span>{{attributes[4].name}}</span>-->
+<!--          </td>-->
+<!--          <td class="value">{{this.knight?.critRate}}</td>-->
+<!--        </tr>-->
+<!--        <tr class="table-row">-->
+<!--          <td class="attribute">-->
+<!--            <img [src]="attributes[5].url" alt="icon" class="attribute-icon">-->
+<!--            <span>{{attributes[5].name}}</span>-->
+<!--          </td>-->
+<!--          <td class="value">{{this.knight?.critDamage}}</td>-->
+<!--        </tr>-->
+<!--        <tr class="table-row">-->
+<!--          <td class="attribute">-->
+<!--            <img [src]="attributes[6].url" alt="icon" class="attribute-icon">-->
+<!--            <span>{{attributes[6].name}}</span>-->
+<!--          </td>-->
+<!--          <td class="value">{{this.knight?.energyRecharge}}</td>-->
+<!--        </tr>-->
+<!--      </ng-template>-->
+<!--    </p-table>-->
