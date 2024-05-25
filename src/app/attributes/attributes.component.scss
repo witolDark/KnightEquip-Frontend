@@ -36,6 +36,8 @@
   height: 120px;
   width: 100px;
   position: relative;
+  border-radius: 10px;
+  background: #f1f1f1;
 }
 
 .stars {
@@ -58,6 +60,10 @@
   height: 30%;
   background-color: #f1f1f1;
   border-radius: 0 0 10px 10px;
+}
+
+.no-item {
+  font-size: 60px;
 }
 
 .generate-button {

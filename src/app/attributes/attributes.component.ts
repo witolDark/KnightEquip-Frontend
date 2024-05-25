@@ -4,6 +4,7 @@ import {Subject, takeUntil} from "rxjs";
 import {KnightService} from "../shared/services/knight.service";
 import {KnightStateModel} from "../shared/models/knight-payload";
 import {InventoryService} from "../shared/services/inventory.service";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-attributes',
@@ -14,7 +15,7 @@ export class AttributesComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   protected knight?: KnightStateModel;
 
-  constructor(private knightService: KnightService, private inventoryService: InventoryService) {}
+  constructor(private knightService: KnightService, private inventoryService: InventoryService, private messageService: MessageService) {}
 
   ngOnInit() {
     this.knightService.knight$?.pipe(takeUntil(this.destroy$)).subscribe((knight: KnightStateModel) => {
@@ -30,6 +31,7 @@ export class AttributesComponent implements OnInit, OnDestroy {
   protected readonly attributes = attributes;
 
   onGenerateItem() {
+    this.messageService.add({ severity: 'success', summary: 'Успіх', detail: 'Новий предмет додано до інвентаря'})
     this.inventoryService.generateItem();
   }
 

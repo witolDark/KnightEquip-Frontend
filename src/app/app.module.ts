@@ -16,6 +16,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {ButtonModule} from "primeng/button";
 import { InventoryComponent } from './inventory/inventory.component';
 import {InventoryState} from "./shared/store/inventory/inventory-state";
+import {ToastModule} from "primeng/toast";
+import {MessageService} from "primeng/api";
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -34,9 +37,11 @@ import {InventoryState} from "./shared/store/inventory/inventory-state";
     NgxsModule.forRoot([KnightState, InventoryState]),
     NgxsLoggerPluginModule.forRoot({disabled: environment.production}),
     NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production}),
-    ButtonModule
+    ButtonModule,
+    ToastModule,
+    BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

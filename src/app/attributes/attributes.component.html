@@ -69,16 +69,22 @@
 
         </div>
       </div>
-      <div class="card">
-        <div class="rariry-background">
+      <div class="card" fxLayoutAlign="center center">
+        @if (this.knight?.helmet) {
+          <div class="rariry-background">
 
-        </div>
-        <div class="stars">
+          </div>
+          <div class="stars">
 
-        </div>
-        <div class="level-background">
+          </div>
+          <div class="level-background">
 
-        </div>
+          </div>
+        } @else {
+          <div class="no-item">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        }
       </div>
       <div class="card">
         <div class="rariry-background">
@@ -114,6 +120,7 @@
         </div>
       </div>
     </div>
+      <p-toast position="bottom-right"/>
     <button
       pButton
       label="Згенерувати предмет"
