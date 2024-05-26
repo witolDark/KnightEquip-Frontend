@@ -3,7 +3,7 @@ import {Observable} from "rxjs";
 import {KnightStateModel} from "../models/knight";
 import {KnightState} from "../store/knight/knight-state";
 import {Select, Store} from "@ngxs/store";
-import {EquipItem, GetKnight} from "../store/knight/knight-actions";
+import {EquipItem, GetKnight, UnequipItem} from "../store/knight/knight-actions";
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,9 @@ export class KnightService {
 
   public equipItem(itemId: number) {
     this.store.dispatch(new EquipItem(itemId));
+  }
+
+  public unequipItem(itemId: number) {
+    this.store.dispatch(new UnequipItem(itemId));
   }
 }

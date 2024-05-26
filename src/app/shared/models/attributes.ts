@@ -3,7 +3,7 @@ interface Attributes {
   name: string
 }
 
-export const attributes: Attributes[] = [
+export let attributes: Attributes[] = [
   {url: "assets/icons/Health.webp", name: "Макс. HP"},
   {url: "assets/icons/Attack.webp", name: "Атака"},
   {url: "assets/icons/Defense.webp", name: "Захист"},

@@ -8,3 +8,10 @@ export class EquipItem {
   constructor(public itemId: number) {
   }
 }
+
+export class UnequipItem {
+  static readonly type = '[knight] unequip';
+
+  constructor(public itemId: number) {
+  }
+}

@@ -57,7 +57,7 @@
   <div fxLayout="column" fxLayoutGap="10px">
     <span>Екіпірування</span>
     <div class="card-row" fxLayout="row" fxLayoutGap="20px">
-      <div class="card">
+      <div class="card" (click)="onItemToggle('weapon')"  [ngClass]="{'active' : this.isActiveWeapon}">
         @if (this.knight?.sword) {
           <div class="rariry-background"
                [ngClass]="{'legendary': this.knight?.sword?.rarity === 'LEGENDARY',
@@ -86,7 +86,7 @@
           </div>
         }
       </div>
-      <div class="card">
+      <div class="card" (click)="onItemToggle('helmet')"  [ngClass]="{'active' : this.isActiveHelmet}">
         @if (this.knight?.helmet) {
           <div class="rariry-background"
                [ngClass]="{'legendary': this.knight?.helmet?.rarity === 'LEGENDARY',
@@ -115,7 +115,7 @@
           </div>
         }
       </div>
-      <div class="card">
+      <div class="card" (click)="onItemToggle('cloak')" [ngClass]="{'active' : this.isActiveCloak}">
         @if (this.knight?.cloak) {
           <div class="rariry-background"
                [ngClass]="{'legendary': this.knight?.cloak?.rarity === 'LEGENDARY',
@@ -144,7 +144,7 @@
           </div>
         }
       </div>
-      <div class="card">
+      <div class="card" (click)="onItemToggle('chestplate')"  [ngClass]="{'active' : this.isActiveChestplate}">
         @if (this.knight?.chestplate) {
           <div class="rariry-background"
                [ngClass]="{'legendary': this.knight?.chestplate?.rarity === 'LEGENDARY',
@@ -173,7 +173,7 @@
           </div>
         }
       </div>
-      <div class="card">
+      <div class="card" (click)="onItemToggle('boots')"  [ngClass]="{'active' : this.isActiveBoots}">
         @if (this.knight?.boots) {
           <div class="rariry-background"
                [ngClass]="{'legendary': this.knight?.boots?.rarity === 'LEGENDARY',
@@ -204,11 +204,19 @@
       </div>
     </div>
     <p-toast position="bottom-right"/>
-    <button
-      pButton
-      label="Згенерувати предмет"
-      class="generate-button" (click)="onGenerateItem()">
-    </button>
+    <div fxLayout="row" fxLayoutGap="30px">
+      <button
+        pButton
+        label="Згенерувати предмет"
+        class="generate-button" (click)="onGenerateItem()">
+      </button>
+      <button
+        pButton
+        label="Видалити предмет"
+        [disabled]="!isActiveChestplate && !isActiveHelmet && !isActiveWeapon && !isActiveBoots && !isActiveCloak"
+        class="delete-button" (click)="onDeleteItem()">
+      </button>
+    </div>
   </div>
 </div>
 

@@ -6,14 +6,22 @@
   color: rgba(0, 0, 0, 0.7);
   box-sizing: border-box;
   padding: 40px;
+  overflow-y: auto;
 }
 
 .inventory-column {
-  width: 70%;
+  width: 65%;
+  height: 100%;
 }
 
 .clicked-container {
-  width: 30%;
+  width: 35%;
+  position: sticky;
+  top: 0;
+}
+
+.p-tabview-panels {
+  overflow: auto;
 }
 
 .card {
@@ -27,7 +35,7 @@
   cursor: pointer;
 }
 
-.items-container {
+p-tabPanel .items-container {
   flex-wrap: wrap;
   gap: 20px 20px;
 }

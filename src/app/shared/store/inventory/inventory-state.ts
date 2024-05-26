@@ -137,7 +137,7 @@ export class InventoryState {
   @Action(GenerateItem)
   generateItem(_context: StateContext<InventoryStateModel>) {
     return this.httpClents.post<InventoryItem>(Links.Inventory, {}).pipe(tap(payload => {
-      this.messageService.add({severity: 'success', summary: 'Успіх', detail: 'Новий предмет додано до інвентаря'})
+      return this.messageService.add({severity: 'success', summary: 'Успіх', detail: 'Новий предмет додано до інвентаря'})
     }), catchError((err: HttpErrorResponse) => {
       this.messageService.add({severity: 'danger', summary: 'Помилка', detail: err.error.message});
       return EMPTY;

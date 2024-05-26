@@ -1,5 +1,4 @@
-<div class='page' fxLayout="column" fxLayoutGap="20px">
-  <div fxLayout="row" fxLayoutGap="20px">
+<div class='page' fxLayout="row" fxLayoutGap="20px">
     <div class="inventory-column" fxLayout="column" fxLayoutGap="30px">
       <span>Інвентар</span>
       <div class="inventory-container">
@@ -162,6 +161,10 @@
             <i class="fa-solid fa-star"></i>
           }
         </div>
+        <div fxLayout="row" fxLayoutAlign="space-between none">
+          <span>Вага</span>
+          <span>{{this.choosenItem.weight}}</span>
+        </div>
         <p-toast position="bottom-right"/>
         <button
           pButton
@@ -170,5 +173,4 @@
         </button>
       </div>
     }
-  </div>
 </div>

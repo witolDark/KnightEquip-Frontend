@@ -3,7 +3,7 @@ import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Links} from "../../enums/links";
 import {tap} from "rxjs";
-import {EquipItem, GetKnight} from "./knight-actions";
+import {EquipItem, GetKnight, UnequipItem} from "./knight-actions";
 import {KnightStateModel} from "../../models/knight";
 
 @State<KnightStateModel>({
@@ -47,6 +47,15 @@ export class KnightState {
   @Action(EquipItem)
   equipItem({patchState}: StateContext<KnightStateModel>, {itemId}: EquipItem) {
     return this.httpClents.patch<KnightStateModel>(Links.Knight, {}, {params: {itemId}}).pipe(tap((payload: KnightStateModel) => {
+      patchState({
+        ...payload
+      })
+    }));
+  }
+
+  @Action(UnequipItem)
+  unequipItem({patchState}: StateContext<KnightStateModel>, {itemId}: UnequipItem) {
+    return this.httpClents.patch<KnightStateModel>(`${Links.Knight}/unequip`, {}, {params: {itemId}}).pipe(tap((payload: KnightStateModel) => {
       patchState({
         ...payload
       })
