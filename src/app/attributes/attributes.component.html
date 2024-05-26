@@ -13,7 +13,10 @@
         <img [src]="attributes[1].url" alt="icon" class="attribute-icon">
         <span class="at-name">{{ attributes[1].name }}</span>
       </div>
-      <span class="value">{{ this.knight?.baseDamage }}</span>
+      <span fxLayout="row" fxLayoutGap="10px">
+        <span class="value">{{ this.knight?.baseDamage }}</span>
+        <span class="additional-value">+{{ this.knight?.additionalDamage }}</span>
+      </span>
     </div>
     <div class="table-row" fxLayout="row" fxLayoutAlign="space-between center">
       <div>
@@ -55,72 +58,152 @@
     <span>Екіпірування</span>
     <div class="card-row" fxLayout="row" fxLayoutGap="20px">
       <div class="card">
-        <div class="rariry-background">
-
-        </div>
-        <div class="stars" fxLayout="row" fxLayoutAlign="center center">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <div class="level-background">
-
-        </div>
-      </div>
-      <div class="card" fxLayoutAlign="center center">
-        @if (this.knight?.helmet) {
-          <div class="rariry-background">
-
+        @if (this.knight?.sword) {
+          <div class="rariry-background"
+               [ngClass]="{'legendary': this.knight?.sword?.rarity === 'LEGENDARY',
+                 'elegant': this.knight?.sword?.rarity === 'ELEGANT',
+                 'common': this.knight?.sword?.rarity === 'COMMON'}" fxLayoutAlign="center center">
+            <img src="assets/icons/sword.svg" alt="sword" width="40" height="40">
           </div>
           <div class="stars">
-
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            @if (this.knight?.sword?.rarity === 'ELEGANT') {
+              <i class="fa-solid fa-star"></i>
+            }
+            @if (this.knight?.sword?.rarity === 'LEGENDARY') {
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            }
           </div>
-          <div class="level-background">
-
+          <div class="level-background" fxLayoutAlign="center center">
+            <span>+{{ this.knight?.sword?.level }}</span>
           </div>
         } @else {
-          <div class="no-item">
+          <div class="no-item" fxLayoutAlign="center center">
             <i class="fa-solid fa-xmark"></i>
           </div>
         }
       </div>
       <div class="card">
-        <div class="rariry-background">
-
-        </div>
-        <div class="stars">
-
-        </div>
-        <div class="level-background">
-
-        </div>
+        @if (this.knight?.helmet) {
+          <div class="rariry-background"
+               [ngClass]="{'legendary': this.knight?.helmet?.rarity === 'LEGENDARY',
+                 'elegant': this.knight?.helmet?.rarity === 'ELEGANT',
+                 'common': this.knight?.helmet?.rarity === 'COMMON'}" fxLayoutAlign="center center">
+            <img src="assets/icons/helmet.svg" alt="sword" width="40" height="40">
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            @if (this.knight?.helmet?.rarity === 'ELEGANT') {
+              <i class="fa-solid fa-star"></i>
+            }
+            @if (this.knight?.helmet?.rarity === 'LEGENDARY') {
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            }
+          </div>
+          <div class="level-background" fxLayoutAlign="center center">
+            <span>+{{ this.knight?.helmet?.level }}</span>
+          </div>
+        } @else {
+          <div class="no-item" fxLayoutAlign="center center">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        }
       </div>
       <div class="card">
-        <div class="rariry-background">
-
-        </div>
-        <div class="stars">
-
-        </div>
-        <div class="level-background">
-
-        </div>
+        @if (this.knight?.cloak) {
+          <div class="rariry-background"
+               [ngClass]="{'legendary': this.knight?.cloak?.rarity === 'LEGENDARY',
+                 'elegant': this.knight?.cloak?.rarity === 'ELEGANT',
+                 'common': this.knight?.cloak?.rarity === 'COMMON'}" fxLayoutAlign="center center">
+            <img src="assets/icons/cloak.svg" alt="sword" width="40" height="40">
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            @if (this.knight?.cloak?.rarity === 'ELEGANT') {
+              <i class="fa-solid fa-star"></i>
+            }
+            @if (this.knight?.cloak?.rarity === 'LEGENDARY') {
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            }
+          </div>
+          <div class="level-background" fxLayoutAlign="center center">
+            <span>+{{ this.knight?.cloak?.level }}</span>
+          </div>
+        } @else {
+          <div class="no-item" fxLayoutAlign="center center">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        }
       </div>
       <div class="card">
-        <div class="rariry-background">
-
-        </div>
-        <div class="stars">
-
-        </div>
-        <div class="level-background">
-
-        </div>
+        @if (this.knight?.chestplate) {
+          <div class="rariry-background"
+               [ngClass]="{'legendary': this.knight?.chestplate?.rarity === 'LEGENDARY',
+                 'elegant': this.knight?.chestplate?.rarity === 'ELEGANT',
+                 'common': this.knight?.chestplate?.rarity === 'COMMON'}" fxLayoutAlign="center center">
+            <img src="assets/icons/chestplate.svg" alt="sword" width="40" height="40">
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            @if (this.knight?.chestplate?.rarity === 'ELEGANT') {
+              <i class="fa-solid fa-star"></i>
+            }
+            @if (this.knight?.chestplate?.rarity === 'LEGENDARY') {
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            }
+          </div>
+          <div class="level-background" fxLayoutAlign="center center">
+            <span>+{{ this.knight?.chestplate?.level }}</span>
+          </div>
+        } @else {
+          <div class="no-item" fxLayoutAlign="center center">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        }
+      </div>
+      <div class="card">
+        @if (this.knight?.boots) {
+          <div class="rariry-background"
+               [ngClass]="{'legendary': this.knight?.boots?.rarity === 'LEGENDARY',
+                 'elegant': this.knight?.boots?.rarity === 'ELEGANT',
+                 'common': this.knight?.boots?.rarity === 'COMMON'}" fxLayoutAlign="center center">
+            <img src="assets/icons/boots.svg" alt="sword" width="40" height="40">
+          </div>
+          <div class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            @if (this.knight?.boots?.rarity === 'ELEGANT') {
+              <i class="fa-solid fa-star"></i>
+            }
+            @if (this.knight?.boots?.rarity === 'LEGENDARY') {
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            }
+          </div>
+          <div class="level-background" fxLayoutAlign="center center">
+            <span>+{{ this.knight?.boots?.level }}</span>
+          </div>
+        } @else {
+          <div class="no-item" fxLayoutAlign="center center">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+        }
       </div>
     </div>
-      <p-toast position="bottom-right"/>
+    <p-toast position="bottom-right"/>
     <button
       pButton
       label="Згенерувати предмет"

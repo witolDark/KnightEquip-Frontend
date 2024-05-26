@@ -1,0 +1,87 @@
+.page {
+  background: white;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  box-sizing: border-box;
+  padding: 40px;
+}
+
+.inventory-column {
+  width: 70%;
+}
+
+.clicked-container {
+  width: 30%;
+}
+
+.card {
+  height: 120px;
+  width: 100px;
+  position: relative;
+  border-radius: 10px;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.items-container {
+  flex-wrap: wrap;
+  gap: 20px 20px;
+}
+
+.stars {
+  position: absolute;
+  color: gold;
+  font-size: 15px;
+  width: 100%;
+  top: 60%;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.stars-row {
+  color: gold;
+  font-size: 40px;
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+}
+
+.rariry-background {
+  border-radius: 10px 10px 0 0;
+  height: 70%;
+}
+
+.legendary {
+  background-color: orange;
+}
+
+.elegant {
+  background-color: blueviolet;
+}
+
+.common {
+  background-color: gray;
+}
+
+.level-background {
+  height: 30%;
+  background-color: #f1f1f1;
+  border-radius: 0 0 10px 10px;
+  font-family: 'MainFont', sans-serif;
+}
+
+.generate-button {
+  width: 300px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  background: #f1f1f1;
+  border: none;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: 'MainFont', sans-serif;
+}
+
+.choosen-item {
+  margin-top: 75px;
+}

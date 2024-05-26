@@ -20,6 +20,10 @@
   margin-right: 10px;
 }
 
+.additional-value {
+  color: green;
+}
+
 .table-row:nth-child(even) {
   background-color: #ffffff;
 }
@@ -37,7 +41,6 @@
   width: 100px;
   position: relative;
   border-radius: 10px;
-  background: #f1f1f1;
 }
 
 .stars {
@@ -53,17 +56,32 @@
 .rariry-background {
   border-radius: 10px 10px 0 0;
   height: 70%;
+}
+
+.legendary {
   background-color: orange;
+}
+
+.elegant {
+  background-color: blueviolet;
+}
+
+.common {
+  background-color: gray;
 }
 
 .level-background {
   height: 30%;
   background-color: #f1f1f1;
   border-radius: 0 0 10px 10px;
+  font-family: 'MainFont', sans-serif;
 }
 
 .no-item {
+  height: 120px;
+  width: 100px;
   font-size: 60px;
+  background: #f1f1f1;
 }
 
 .generate-button {

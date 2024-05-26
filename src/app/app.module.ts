@@ -14,11 +14,12 @@ import {NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
 import {environment} from "../environments/environment";
 import {HttpClientModule} from "@angular/common/http";
 import {ButtonModule} from "primeng/button";
-import { InventoryComponent } from './inventory/inventory.component';
+import {InventoryComponent} from './inventory/inventory.component';
 import {InventoryState} from "./shared/store/inventory/inventory-state";
 import {ToastModule} from "primeng/toast";
 import {MessageService} from "primeng/api";
-import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {TabViewModule} from "primeng/tabview";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-b
     NgxsReduxDevtoolsPluginModule.forRoot({disabled: environment.production}),
     ButtonModule,
     ToastModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    TabViewModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

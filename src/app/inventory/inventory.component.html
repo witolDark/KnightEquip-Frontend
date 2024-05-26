@@ -1,1 +1,174 @@
-
+<div class='page' fxLayout="column" fxLayoutGap="20px">
+  <div fxLayout="row" fxLayoutGap="20px">
+    <div class="inventory-column" fxLayout="column" fxLayoutGap="30px">
+      <span>Інвентар</span>
+      <div class="inventory-container">
+        <p-tabView>
+          <p-tabPanel header="Зброя">
+            <div class="items-container" fxLayout="row">
+              <div class="card" *ngFor="let item of inventoryService.weapons$ | async" (click)="onItemClick(item)">
+                <div class="rariry-background"
+                     [ngClass]="{'legendary': item.rarity === 'LEGENDARY',
+                 'elegant': item.rarity === 'ELEGANT',
+                 'common': item.rarity === 'COMMON'}" fxLayoutAlign="center center">
+                  <img src="assets/icons/sword.svg" alt="sword" width="40" height="40">
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  @if (item.rarity === 'ELEGANT') {
+                    <i class="fa-solid fa-star"></i>
+                  }
+                  @if (item.rarity === 'LEGENDARY') {
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  }
+                </div>
+                <div class="level-background" fxLayoutAlign="center center">
+                  <span>+{{ item.level }}</span>
+                </div>
+              </div>
+            </div>
+          </p-tabPanel>
+          <p-tabPanel header="Шлем">
+            <div class="items-container" fxLayout="row">
+              <div class="card" *ngFor="let item of inventoryService.helmets$ | async" (click)="onItemClick(item)">
+                <div class="rariry-background"
+                     [ngClass]="{'legendary': item.rarity === 'LEGENDARY',
+                 'elegant': item.rarity === 'ELEGANT',
+                 'common': item.rarity === 'COMMON'}" fxLayoutAlign="center center">
+                  <img src="assets/icons/helmet.svg" alt="sword" width="40" height="40">
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  @if (item.rarity === 'ELEGANT') {
+                    <i class="fa-solid fa-star"></i>
+                  }
+                  @if (item.rarity === 'LEGENDARY') {
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  }
+                </div>
+                <div class="level-background" fxLayoutAlign="center center">
+                  <span>+{{ item.level }}</span>
+                </div>
+              </div>
+            </div>
+          </p-tabPanel>
+          <p-tabPanel header="Плащ">
+            <div class="items-container" fxLayout="row">
+              <div class="card" *ngFor="let item of inventoryService.cloaks$ | async" (click)="onItemClick(item)">
+                <div class="rariry-background"
+                     [ngClass]="{'legendary': item.rarity === 'LEGENDARY',
+                 'elegant': item.rarity === 'ELEGANT',
+                 'common': item.rarity === 'COMMON'}" fxLayoutAlign="center center">
+                  <img src="assets/icons/cloak.svg" alt="sword" width="40" height="40">
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  @if (item.rarity === 'ELEGANT') {
+                    <i class="fa-solid fa-star"></i>
+                  }
+                  @if (item.rarity === 'LEGENDARY') {
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  }
+                </div>
+                <div class="level-background" fxLayoutAlign="center center">
+                  <span>+{{ item.level }}</span>
+                </div>
+              </div>
+            </div>
+          </p-tabPanel>
+          <p-tabPanel header="Броня">
+            <div class="items-container" fxLayout="row">
+              <div class="card" *ngFor="let item of inventoryService.chestplates$ | async" (click)="onItemClick(item)">
+                <div class="rariry-background"
+                     [ngClass]="{'legendary': item.rarity === 'LEGENDARY',
+                 'elegant': item.rarity === 'ELEGANT',
+                 'common': item.rarity === 'COMMON'}" fxLayoutAlign="center center">
+                  <img src="assets/icons/chestplate.svg" alt="sword" width="40" height="40">
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  @if (item.rarity === 'ELEGANT') {
+                    <i class="fa-solid fa-star"></i>
+                  }
+                  @if (item.rarity === 'LEGENDARY') {
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  }
+                </div>
+                <div class="level-background" fxLayoutAlign="center center">
+                  <span>+{{ item.level }}</span>
+                </div>
+              </div>
+            </div>
+          </p-tabPanel>
+          <p-tabPanel header="Чоботи">
+            <div class="items-container" fxLayout="row">
+              <div class="card" *ngFor="let item of inventoryService.boots$ | async" (click)="onItemClick(item)">
+                <div class="rariry-background"
+                     [ngClass]="{'legendary': item.rarity === 'LEGENDARY',
+                 'elegant': item.rarity === 'ELEGANT',
+                 'common': item.rarity === 'COMMON'}" fxLayoutAlign="center center">
+                  <img src="assets/icons/boots.svg" alt="sword" width="40" height="40">
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  @if (item.rarity === 'ELEGANT') {
+                    <i class="fa-solid fa-star"></i>
+                  }
+                  @if (item.rarity === 'LEGENDARY') {
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  }
+                </div>
+                <div class="level-background" fxLayoutAlign="center center">
+                  <span>+{{ item.level }}</span>
+                </div>
+              </div>
+            </div>
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+    </div>
+    @if(this.choosenItem) {
+      <div class="clicked-container" fxLayout="column" fxLayoutGap="30px">
+        <span>Вибрано</span>
+        <span class="choosen-item">{{this.choosenItemName}}</span>
+        <div fxLayout="row" fxLayoutAlign="space-between none">
+          <span>{{this.choosenItemMainStat}}</span>
+          <span>{{this.choosenItem.mainStatValue}}%</span>
+        </div>
+        <div class="stars-row">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          @if (this.choosenItem.rarity === 'ELEGANT') {
+            <i class="fa-solid fa-star"></i>
+          }
+          @if (this.choosenItem.rarity === 'LEGENDARY') {
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          }
+        </div>
+        <p-toast position="bottom-right"/>
+        <button
+          pButton
+          label="Одягти"
+          class="generate-button" (click)="onEquipItem()">
+        </button>
+      </div>
+    }
+  </div>
+</div>
