@@ -145,6 +145,15 @@
       <div class="clicked-container" fxLayout="column" fxLayoutGap="30px">
         <span>Вибрано</span>
         <span class="choosen-item">{{this.choosenItemName}}</span>
+        <div fxLayoutAlign="center center" class="choosen-icon-wrapper" [ngClass]="{'legendary': choosenItem?.rarity === 'LEGENDARY',
+                 'elegant': choosenItem?.rarity === 'ELEGANT',
+                 'common': choosenItem?.rarity === 'COMMON'}">
+          <img [src]="choosenImageSrc" alt="Choosen item" width="130" height="130">
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between none">
+          <span>Рівень</span>
+          <span>{{this.choosenItem.level}}</span>
+        </div>
         <div fxLayout="row" fxLayoutAlign="space-between none">
           <span>{{this.choosenItemMainStat}}</span>
           <span>{{this.choosenItem.mainStatValue}}%</span>

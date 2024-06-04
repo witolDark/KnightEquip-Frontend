@@ -12,6 +12,7 @@ export class InventoryComponent implements OnInit {
   choosenItem: InventoryItem | undefined;
   choosenItemName: string | undefined;
   choosenItemMainStat: string | undefined;
+  choosenImageSrc: string | undefined;
 
   constructor(protected inventoryService: InventoryService, private knightService: KnightService) {
   }
@@ -22,11 +23,26 @@ export class InventoryComponent implements OnInit {
 
   onItemClick(item: InventoryItem) {
     this.choosenItem = item;
-    if (item.type === 'SWORD') this.choosenItemName = "Меч";
-    if (item.type === 'HELMET') this.choosenItemName = "Шолом";
-    if (item.type === 'CLOAK') this.choosenItemName = "Плащ";
-    if (item.type === 'CHESTPLATE') this.choosenItemName = "Броня";
-    if (item.type === 'BOOTS') this.choosenItemName = "Чоботи";
+    if (item.type === 'SWORD') {
+      this.choosenItemName = "Меч";
+      this.choosenImageSrc = "assets/icons/sword.svg"
+    }
+    if (item.type === 'HELMET') {
+      this.choosenItemName = "Шолом";
+      this.choosenImageSrc = "assets/icons/helmet.svg"
+    }
+    if (item.type === 'CLOAK') {
+      this.choosenItemName = "Плащ";
+      this.choosenImageSrc = "assets/icons/cloak.svg"
+    }
+    if (item.type === 'CHESTPLATE') {
+      this.choosenItemName = "Броня";
+      this.choosenImageSrc = "assets/icons/chestplate.svg"
+    }
+    if (item.type === 'BOOTS') {
+      this.choosenItemName = "Чоботи";
+      this.choosenImageSrc = "assets/icons/boots.svg"
+    }
 
     if (item.mainStat === 'ATTACK_PERCENT') this.choosenItemMainStat = "Сила атаки"
     if (item.mainStat === 'ENERGY_RECHARGE') this.choosenItemMainStat = "Відновлення енергії"
@@ -39,7 +55,7 @@ export class InventoryComponent implements OnInit {
     if (this.choosenItem?.id) {
       this.knightService.equipItem(this.choosenItem.id);
     } else {
-      console.log("DYDANWDJAWDNWJADNAWJDN")
+      console.log("Item doesn't exists")
     }
   }
 }
